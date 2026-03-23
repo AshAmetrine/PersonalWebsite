@@ -31,6 +31,7 @@ body {
   flex-direction: column;
   min-height: calc(100vh - 0.25rem * 16);
   padding-top: 4rem;
+  margin: 0;
 }
 
 #content {
@@ -40,7 +41,6 @@ body {
   padding: 1.25rem 1rem;
   width: min(720px, 100vw);
   font-family: var(--font-serif);
-  font-size: 1.0625rem;
 }
 
 footer {
@@ -232,22 +232,27 @@ header a,
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.875rem;
+  font-size: 1.8rem;
 }
 
 .copy-button .icon {
   display: block;
 }
 
-.code-toolbar {
-  margin-bottom: -40px;
-  text-align: right;
-  border-radius: 10px 10px 0 0;
-  max-height: 40px;
-  min-height: 40px;
+.code-container {
+  margin: 1.5rem 0;
+  border-radius: 10px;
   overflow: hidden;
+  background-color: #24283b;
+}
+
+.code-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 0.25rem;
   background-color: #1c1e30;
-  position: relative;
 }
 
 .code-toolbar button.copy-button {
@@ -257,18 +262,9 @@ header a,
   color: var(--normal);
   max-height: 40px;
   line-height: 40px;
-}
-
-.code-toolbar > :last-child {
-  border-bottom-right-radius: 0;
-}
-
-.code-toolbar ~ pre > code {
-  margin-top: 45px;
-}
-
-.code-toolbar ~ pre {
-  padding-top: 0;
+  background-color: transparent;
+  border: none;
+  vertical-align: middle;
 }
 
 code {
@@ -282,14 +278,18 @@ pre {
   background-color: #24283b;
   border-radius: 10px;
   padding: 1rem 1.125rem;
-  margin: 1.5rem 0;
+  margin: 0;
   overflow: auto;
   font-size: 0.95rem;
   line-height: 1.65;
 }
 
-pre > code,
-.code-toolbar ~ pre > code {
+.code-container > pre {
+  border-radius: 0;
+}
+
+.code-container > pre > code,
+pre > code {
   display: block;
   min-width: 100%;
 }
@@ -306,6 +306,13 @@ pre.nl {
   padding-left: 0;
   padding-right: 0;
 }
+
+pre.nl > code {
+  display: inline-block;
+  min-width: 100%;
+  width: max-content;
+}
+
 pre.nl .line::before {
   counter-increment: line;
   content: counter(line);
@@ -320,8 +327,9 @@ pre.nl .line::before {
 
 pre.nl .line {
   display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
   min-height: 1.2rem;
-  min-width: 100%;
   padding-right: 1rem;
 }
 
@@ -361,6 +369,10 @@ figcaption {
 
 figure pre {
   border-radius: 0;
+}
+
+figure > .code-container {
+  margin: 0;
 }
 
 img,

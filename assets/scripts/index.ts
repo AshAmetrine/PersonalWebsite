@@ -10,21 +10,23 @@ function codeToolbarHTML(code_block_id: string) : string {
 }
 
 function createCodeToolbars() {
-  const code_blocks = document.getElementsByTagName("code");
-  for (var i = 0; i < code_blocks.length; i++) {
+  const code_blocks = document.querySelectorAll("pre > code");
+  for (let i = 0; i < code_blocks.length; i++) {
     const code_block = code_blocks[i];
 
     const pre_block = code_block.parentElement;
-    if (pre_block && pre_block.nodeName == "PRE") {
-      if (code_block.id.length == 0) {
-        code_block.id = "codeblock#" + i;
-      }
+    if (pre_block.parentElement?.classList.contains("code-container")) continue;
 
-      pre_block.insertAdjacentHTML(
-        "beforebegin",
-        codeToolbarHTML(code_block.id),
-      );
+    if (code_block.id.length == 0) {
+      code_block.id = "codeblock#" + i;
     }
+
+    const container = document.createElement("div");
+    container.className = "code-container";
+
+    pre_block.parentElement?.insertBefore(container, pre_block);
+    container.insertAdjacentHTML("afterbegin", codeToolbarHTML(code_block.id));
+    container.appendChild(pre_block);
   }
 }
 
