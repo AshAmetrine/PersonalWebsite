@@ -1,0 +1,37 @@
+<extend template="base.shtml">
+<title id="title" :text="$page.title"></title>
+<head id="head">
+</head>
+<main id="content">
+  <header>
+    <h1 :text="$page.title"></h1>
+    <ctx :if="$page.description.len().gt(0)"><p :text="$page.description" class="description"></p></ctx>
+  </header>
+
+  <div id="page" :html="$page.content()"></div>
+
+  <ctx :if="$page.subpages().len.gt(0)">
+    <ul class="item-list" :loop="$page.subpages()">
+      <li class="post-item item-card">
+        <div class="project-card">
+          <a href="$loop.it.link()">
+            <h2 class="item-card-title" :text="$loop.it.title"></h2>
+          </a>
+          <ctx :if="$loop.it.description.len().gt(0)"><p :text="$loop.it.description"></p></ctx>
+          <ctx :if="$loop.it.tags.len.gt(0)">
+            <ul :loop="$loop.it.tags" class="tags">
+              <li class="tag-item">
+                <span :text="$loop.it" class="tag"></span>
+              </li>
+            </ul>
+          </ctx>
+          <ctx :if="$loop.it.custom.get?('repo_url')">
+            <p class="project-link-row">
+              <a href="$if" target="_blank" rel="noopener noreferrer" class="project-repo-link"><svg class="icon icon-space-xs" aria-hidden="true" focusable="false"><use href="/icons.svg#icon-code-branch"></use></svg>Source Code</a>
+            </p>
+          </ctx>
+        </div>
+      </li>
+    </ul>
+  </ctx>
+</main>

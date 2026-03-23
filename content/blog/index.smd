@@ -1,0 +1,15 @@
+---
+.title = "Blog",
+.description = "Check out my posts!",
+.date = @date("2025-04-25T14:17:00"),
+.author = "Ash Ametrine",
+.layout = "blog.shtml",
+.alternatives = [{
+    .name = "rss",
+    .type = "application/rss+xml",
+    .layout = "rss.xml",
+    .output = "index.xml",
+}],
+.draft = false,
+.tags = [],
+---

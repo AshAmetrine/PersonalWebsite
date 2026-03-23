@@ -1,0 +1,9 @@
+---
+.title = "Projects",
+.description = "A collection of software and tooling I've been developing",
+.date = @date("2025-02-22T00:00:00"),
+.author = "Ash Ametrine",
+.layout = "projects.shtml",
+.draft = false,
+.tags = [],
+---

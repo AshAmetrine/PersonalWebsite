@@ -1,0 +1,40 @@
+<extend template="base.shtml">
+<title id="title" :text="$page.title"></title>
+<head id="head"></head>
+
+<main id="content">
+  <header id="post-header">
+    <h1 :text="$page.title"></h1>
+    <p class="description">
+      <span :text="$page.date.format('January 02, 2006')"></span>
+      <ctx :if="$page.custom.get?('category')">
+        •
+        <span :text="$if"></span>
+      </ctx>
+      •
+      <span :text="$page.wordCount().div(220).plus(1)"></span> min read
+    </p>
+    <ctx :if="$page.tags.len.gt(0)">
+      <ul :loop="$page.tags" class="tags">
+        <li class="tag-item"><span :text="$loop.it" class="tag"></span></li>
+      </ul>
+    </ctx>
+  </header>
+  <hr>
+  <div id="page" :html="$page.content()"></div>
+
+  <div id="post-footer">
+    <div class="post-nav">
+      <span>
+        <ctx :if="$page.prevPage?()">
+          <a href="$if.link()" rel="prev" :text="$if.title.prefix('← ')" class="post-nav-link"></a>
+        </ctx>
+      </span>
+      <span>
+        <ctx :if="$page.nextPage?()">
+          <a href="$if.link()" rel="next" :text="$if.title.suffix(' →')" class="post-nav-link"></a>
+        </ctx>
+      </span>
+    </div>
+  </div>
+</main>

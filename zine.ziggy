@@ -1,0 +1,22 @@
+Site {
+    .title = "Ash's Personal Website",
+    .host_url = "https://ashametrine.dev",
+    .layouts_dir_path = "layouts",
+    .content_dir_path = "content",
+    .assets_dir_path = "assets",
+    .static_assets = [
+        "CNAME",
+        "ash-pubkey.txt",
+        "icons.svg",
+
+        "fonts/JetBrains_Mono/JetBrainsMono-VariableFont_wght.woff2",
+        "fonts/JetBrains_Mono/JetBrainsMono-Italic-VariableFont_wght.woff2",
+
+        "fonts/Literata/Literata-VariableFont_opsz,wght.woff2",
+        "fonts/Literata/Literata-Italic-VariableFont_opsz,wght.woff2",
+
+        "fonts/OpenSans/OpenSans-Medium.woff2",
+        "fonts/OpenSans/OpenSans-Bold.woff2",
+    ],
+    .image_size_attributes = true,
+}

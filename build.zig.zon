@@ -1,0 +1,12 @@
+.{
+    .name = .ashblog,
+    .version = "0.0.0",
+    .fingerprint = 0x750855937c75f3ea,
+    .dependencies = .{
+        .zine = .{
+            .url = "git+https://github.com/kristoff-it/zine#b96e930630f8237aa4927fe14b9cb227061155d3",
+            .hash = "zine-0.11.1-ou6nIBB5FgAaYePTyiT2__fkGVNfImMOnpc_xKNXsYpF",
+        },
+    },
+    .paths = .{"."},
+}

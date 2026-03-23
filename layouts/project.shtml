@@ -1,0 +1,20 @@
+<extend template="base.shtml">
+<title id="title" :text="$page.title"></title>
+<head id="head">
+</head>
+<main id="content">
+  <header>
+    <h1 :text="$page.title"></h1>
+    <ctx :if="$page.description.len().gt(0)"><p :text="$page.description" class="description"></p></ctx>
+    <ctx :if="$page.tags.len.gt(0)">
+      <ul :loop="$page.tags" class="tags">
+        <li class="tag-item"><span :text="$loop.it" class="tag"></span></li>
+      </ul>
+    </ctx>
+    <ctx :if="$page.custom.get?('repo_url')">
+      <a href="$if" target="_blank" rel="noopener noreferrer" class="project-repo-link"><svg class="icon icon-space-xs" aria-hidden="true" focusable="false"><use href="/icons.svg#icon-code-branch"></use></svg>Source Code</a>
+    </ctx>
+  </header>
+  <hr>
+  <div id="page" :html="$page.content()"></div>
+</main>

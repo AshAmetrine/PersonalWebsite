@@ -1,0 +1,59 @@
+code, .code-toolbar {
+  --normal: #c0caf5;
+  --builtin: #f7768e;
+  --function: #7aa2f7;
+  --symbol: #2ac3de;
+  --punctuation: #dadada;
+  --string: #9ece6a;
+  --keyword: #9d7cd8;
+  --operator: #89ddff;
+  --constant: #ff9e64;
+  --variable: #c0caf5;
+  --comment: #565f89; /* Italic */
+}
+
+code {
+  color: var(--normal);
+}
+
+code .comment {
+  color: var(--comment);
+  font-style: italic;
+}
+
+code .builtin,
+code .import {
+  color: var(--builtin);
+}
+
+code .function {
+  color: var(--function);
+}
+
+code .string {
+  color: var(--string);
+}
+
+code .type {
+  color: var(--symbol);
+}
+
+code .variable {
+  color: var(--variable);
+}
+
+code .punctuation {
+  color: var(--punctuation);
+}
+
+code .operator {
+  color: var(--operator);
+}
+
+code .keyword {
+  color: var(--keyword);
+}
+
+code .number {
+  color: var(--constant);
+}

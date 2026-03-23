@@ -1,0 +1,8 @@
+---
+.title = "Contact Me",
+.date = @date("2025-02-22T00:00:00"),
+.author = "Ash Ametrine",
+.layout = "contact.shtml",
+.draft = false,
+.tags = [],
+---

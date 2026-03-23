@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head id="head">
+    <meta charset="UTF-8">
+    <meta name="description" content="$page.description.len().gt(0).then($page.description, 'Ash\'s Personal Website')">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="$page.title.suffix(' | Ash')">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title id="title">
+      <super>
+      - Ash
+    </title>
+    <link rel="stylesheet" type="text/css" href="$build.asset('main.css').link()">
+    <script defer type="text/javascript" src="$build.asset('index.js').link()"></script>
+    <super>
+  </head>
+  <body>
+    <nav id="menu">
+      <div class="menu-side menu-side-left">
+        <!-- Left -->
+      </div>
+      <div class="menu-center">
+        <!-- Middle -->
+        <ul>
+          <li><a class="$site.page('').isCurrent().then('current').prefix('menu-link ')" href="$site.link()">
+          Home
+          </a></li><li><a class="$page.link().contains('/projects/').then('current').prefix('menu-link ')" href="$site.page('projects').link()">
+          Projects
+          </a></li><li><a class="$page.link().contains('/blog/').then('current').prefix('menu-link ')" href="$site.page('blog').link()">
+          Blog
+          </a></li>
+        </ul>
+      </div>
+      <div class="menu-side menu-side-right">
+      </div>
+    </nav>
+
+    <!-- 
+    For a better experience when using text-based browsers such as links,
+    we use a <hr> hidden by css, which will be displayed in links.
+    -->
+    <hr class="hidden">
+
+    <main id="content">
+      <super>
+    </main>
+
+    <hr class="hidden">
+    <footer>
+      <ul class="social-links">
+        <li><a href="$site.asset('social_links.ziggy').ziggy().get('github')" target="_blank" rel="noopener noreferrer" class="social-icon-link" title="Github" aria-label="Github"><svg class="icon" aria-hidden="true" focusable="false"><use href="/icons.svg#icon-github"></use></svg></a></li>
+        <li><a href="$site.asset('social_links.ziggy').ziggy().get('kofi')" class="social-icon-link" title="Ko-fi" aria-label="Ko-fi"><svg class="icon" aria-hidden="true" focusable="false"><use href="/icons.svg#icon-mug-hot"></use></svg></a></li>
+        <li><a href="$site.page('contact').link()" class="social-icon-link" title="Email" aria-label="Email"><svg class="icon" aria-hidden="true" focusable="false"><use href="/icons.svg#icon-envelope"></use></svg></a></li>
+        <li><a href="/blog/index.xml" class="social-icon-link" title="RSS Feed" aria-label="RSS Feed"><svg class="icon" aria-hidden="true" focusable="false"><use href="/icons.svg#icon-rss"></use></svg></a></li>
+      </ul>
+
+      <div class="footer-meta">
+        <p class="description footer-note">No AI was used to generate any content on this site.</p>
+        <a class="footer-source-link" href="https://github.com/Kawaii-Ash/PersonalWebsite" target="_blank" rel="noopener noreferrer">Source Code</a>
+      </div>
+    </footer>
+  </body>
+</html>

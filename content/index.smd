@@ -1,0 +1,12 @@
+---
+.title = "Home",
+.date = @date("2025-02-22T00:00:00"),
+.author = "Ash Ametrine",
+.layout = "index.shtml",
+.draft = false,
+.tags = [],
+---
+
+Hi, this is my personal site where you can find posts about anything I find interesting or noteworthy. 
+
+I enjoy developing software and helping others with projects.
