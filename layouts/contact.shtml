@@ -20,11 +20,11 @@
         <p><a href="$ctx.email.prefix('mailto:')" class="contact-email-link" :text="$ctx.email"></a></p>
 
 <pre>
-pub   ed25519 2024-05-07 [SC] [expires: 2030-05-06]
-fingerprint   6DDF B40F 9A32 9EF4 6CCE CF67 EF86 FC12 BB84 F79E
+pub   ed25519 2026-03-22 [SC] [expires: 2031-03-21]
+fingerprint   BE6A 59BC 96AB E7B5 B507 ECE8 3C64 33DF 2A24 7156
 uid           Ash Ametrine &lt;<ctx :text="$ctx.email"></ctx>&gt;
-sub   ed25519 2024-05-07 [A] [expires: 2030-05-06]
-sub   cv25519 2024-05-07 [E] [expires: 2030-05-06]
+sub   cv25519 2026-03-22 [E] [expires: 2031-03-21]
+sub   ed25519 2026-03-22 [A] [expires: 2031-03-21]
 </pre>
 
         <p>If you want an encrypted response, include your public key in your email and I can reply securely. I don't use keyservers.</p>
