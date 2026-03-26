@@ -50,6 +50,7 @@
     <footer>
       <ul class="social-links">
         <li><a href="$site.asset('social_links.ziggy').ziggy().get('github')" target="_blank" rel="noopener noreferrer" class="social-icon-link" title="Github" aria-label="Github"><svg class="icon" aria-hidden="true" focusable="false"><use href="/icons.svg#icon-github"></use></svg></a></li>
+        <li><a href="$site.asset('social_links.ziggy').ziggy().get('codeberg')" target="_blank" rel="noopener noreferrer" class="social-icon-link" title="Codeberg" aria-label="Codeberg"><svg class="icon" aria-hidden="true" focusable="false"><use href="/icons.svg#icon-codeberg"></use></svg></a></li>
         <li><a href="$site.asset('social_links.ziggy').ziggy().get('kofi')" class="social-icon-link" title="Ko-fi" aria-label="Ko-fi"><svg class="icon" aria-hidden="true" focusable="false"><use href="/icons.svg#icon-mug-hot"></use></svg></a></li>
         <li><a href="$site.page('contact').link()" class="social-icon-link" title="Email" aria-label="Email"><svg class="icon" aria-hidden="true" focusable="false"><use href="/icons.svg#icon-envelope"></use></svg></a></li>
         <li><a href="/blog/index.xml" class="social-icon-link" title="RSS Feed" aria-label="RSS Feed"><svg class="icon" aria-hidden="true" focusable="false"><use href="/icons.svg#icon-rss"></use></svg></a></li>
@@ -57,7 +58,7 @@
 
       <div class="footer-meta">
         <p class="description footer-note">No AI was used to generate any content on this site.</p>
-        <a class="footer-source-link" href="https://github.com/Kawaii-Ash/PersonalWebsite" target="_blank" rel="noopener noreferrer">Source Code</a>
+        <a class="footer-source-link" href="https://github.com/ashametrine/PersonalWebsite" target="_blank" rel="noopener noreferrer">Source Code</a>
       </div>
     </footer>
   </body>

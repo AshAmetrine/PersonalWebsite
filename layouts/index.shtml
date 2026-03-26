@@ -9,6 +9,9 @@
         <a href="$site.asset('social_links.ziggy').ziggy().get('github')" target="_blank" rel="noopener noreferrer" class="profile-link"><svg class="icon icon-space-xs" aria-hidden="true" focusable="false"><use href="/icons.svg#icon-github"></use></svg>Github</a>
       </li>
       <li>
+        <a href="$site.asset('social_links.ziggy').ziggy().get('codeberg')" target="_blank" rel="noopener noreferrer" class="profile-link"><svg class="icon icon-space-xs" aria-hidden="true" focusable="false"><use href="/icons.svg#icon-codeberg"></use></svg>Codeberg</a>
+      </li>
+      <li>
         <a href="$site.asset('social_links.ziggy').ziggy().get('kofi')" class="profile-link"><svg class="icon icon-space-xs" aria-hidden="true" focusable="false"><use href="/icons.svg#icon-mug-hot"></use></svg>Ko-fi</a>
       </li>
       <li>
@@ -58,7 +61,7 @@
     </ul>
   </section>
 
-  <section id="recent-projects">
+  <section id="recent-projects" :if="$site.page('projects').subpages().len.gt(0)">
     <div class="section-header">
       <h2>Recent Projects</h2>
       <a href="$site.page('projects').link()" class="section-more-link">See more projects →</a>

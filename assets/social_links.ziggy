@@ -1,5 +1,6 @@
 {
     .github = "https://github.com/ashametrine",
+    .codeberg = "https://codeberg.org/ashametrine",
     .kofi = "https://ko-fi.com/ashametrine",
     .email = "me@ashametrine.dev",
 }
