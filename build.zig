@@ -2,13 +2,13 @@ const std = @import("std");
 const zine = @import("zine");
 
 pub fn build(b: *std.Build) !void {
-    const build_css = b.addSystemCommand(&.{ "bun", "build", "--minify", "-e", "*.woff2", "-e", "*.ttf" });
+    const build_css = b.addSystemCommand(&.{ "esbuild", "--bundle", "--minify", "--external:*.woff2", "--external:*.ttf" });
     build_css.addFileArg(b.path("assets/css/main.css"));
     try addSourceFilesAsInputs(b, build_css, "assets/css", &.{ ".css" });
     const css_output = build_css.addPrefixedOutputFileArg("--outfile=", "main.css");
     build_css.expectExitCode(0);
 
-    const build_js = b.addSystemCommand(&.{ "bun", "build", "--minify" });
+    const build_js = b.addSystemCommand(&.{ "esbuild", "--bundle", "--minify" });
     build_js.addFileArg(b.path("assets/scripts/index.ts"));
     try addSourceFilesAsInputs(b, build_js, "assets/scripts", &.{ ".js", ".ts" });
     const js_output = build_js.addPrefixedOutputFileArg("--outfile=", "index.js");

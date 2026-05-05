@@ -31,12 +31,14 @@ jobs:
         uses: mlugg/setup-zig@v2
         with:
           version: 0.15.2
-      
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
 
       - name: Build
-        run: zig build
+        run: npm exec --yes --package esbuild@0.27.2 -- zig build
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

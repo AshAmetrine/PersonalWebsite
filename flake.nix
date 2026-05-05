@@ -2,7 +2,7 @@
   description = "Personal Blog Flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
   outputs = { nixpkgs, ... }: let
@@ -15,7 +15,7 @@
       in {
         default = pkgs.mkShell {
           name = "blog-devshell";
-          packages = with pkgs; [ zig zls bun watchman woff2 ];
+          packages = (with pkgs; [ zig_0_15 esbuild zls_0_15 watchman woff2 ]);
         };
       });
   };
